@@ -1,0 +1,79 @@
+.header{
+    background-color:#0A1F44 ;
+}
+.headerWrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.link{
+    color: #1AC1C1;
+    font-weight: 400;
+    padding: 8px 16px;
+    transition: all ease-in-out 0.3s;
+    border-radius: 4px;
+}
+.link:hover{
+    background-color: #FFFFFF;
+    color:#0A1F44;
+}
+.active{
+    color:#0A1F44;
+    background-color:#FFFFFF;
+}
+/* fusid -40mg */
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+/* header-actions */
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.searchInput {
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  display: none;
+}
+
+.searchButton {
+  padding: 5px 10px;
+  background: #0070f3;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.iconButton {
+  position: relative;
+  font-size: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+}
+
+.cartBadge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: red;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
