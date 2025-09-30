@@ -36,38 +36,24 @@
   gap: 30px;
 }
 
-.searchForm {
-  display: flex;
-  align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.searchInput {
-  padding: 5px 10px;
-  border: none;
-  outline: none;
-  display: none;
-}
-
+/* 
 .searchButton {
   padding: 5px 10px;
   background: #0070f3;
   color: #fff;
   border: none;
   cursor: pointer;
-}
+} */
 
-.iconButton {
+/* .iconButton {
   position: relative;
   font-size: 20px;
   cursor: pointer;
   text-decoration: none;
   color: #333;
-}
+} */
 
-.cartBadge {
+/* .cartBadge {
   position: absolute;
   top: -5px;
   right: -10px;
@@ -76,4 +62,54 @@
   font-size: 12px;
   padding: 2px 5px;
   border-radius: 50%;
+} */
+.icons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.searchBtn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #444;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 80px;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  padding: 20px;
+  width: 600px;
+  max-width: 90%;
+  border-radius: 8px;
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #555;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
