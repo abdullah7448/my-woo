@@ -31,6 +31,10 @@ body {
   padding: 0px;
   box-sizing: border-box;
 }
+
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+
 .container{
   width: 100%;
   max-width: 1220px;

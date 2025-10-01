@@ -1,3 +1,4 @@
+import BestSelling from "@/components/home/bestSelling";
 import Categories from "@/components/home/categories";
 import HomeSlider from "@/components/slider/home-slider";
 
@@ -13,6 +14,8 @@ export default function Home() {
       </section>
      
       <Categories/>
+    
+      <BestSelling/>
     
     </>
   );
