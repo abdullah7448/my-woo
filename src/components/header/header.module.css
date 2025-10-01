@@ -1,10 +1,21 @@
 .header{
     background-color:#0A1F44 ;
+    position: sticky;
+    top: 0px;
+    z-index: 999;
 }
 .headerWrapper{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
+    min-height: 60px;
+}
+.logo{
+  min-width: 150px;
+}
+.logo a img{
+  margin-left: -18px;
 }
 .link{
     color: #1AC1C1;
@@ -26,7 +37,50 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
+}
+.menuButton {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+@media (max-width: 470px) {
+  .headerActions{
+    gap:10px !important;
+  }
+}
+@media (max-width: 1110px) {
+  .menuButton {
+    display: block;
+    order: 3;
+    width: 20px;
+  }
+
+  .headerActions{
+    gap:10px !important;
+  }
+
+  .nav {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #111;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    width: 200px;
+    display: none; /* hidden by default */
+  }
+
+  .nav.show {
+    display: flex; /* show when "open" */
+  }
+  .link{
+    width: 100%;
+  }
 }
 
 /* header-actions */
@@ -34,6 +88,7 @@
   display: flex;
   align-items: center;
   gap: 30px;
+  margin-left: -16px;
 }
 
 /* 
@@ -45,24 +100,24 @@
   cursor: pointer;
 } */
 
-/* .iconButton {
+.iconButton {
   position: relative;
   font-size: 20px;
   cursor: pointer;
   text-decoration: none;
   color: #333;
-} */
+}
 
-/* .cartBadge {
+.cartBadge {
   position: absolute;
   top: -5px;
-  right: -10px;
+  right: -5px;
   background: red;
   color: #fff;
   font-size: 12px;
   padding: 2px 5px;
   border-radius: 50%;
-} */
+}
 .icons {
   display: flex;
   gap: 1rem;
