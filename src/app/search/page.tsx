@@ -1,11 +1,11 @@
-// app/search/page.tsx or pages/search.tsx
+// app/search/page.tsx
 "use client";
 
 import { useSearchParams } from "next/navigation";
 
 export default function SearchResults() {
   const searchParams = useSearchParams();
-  const query = searchParams.get("query") || "";
+  const query = searchParams?.get("query") || ""; // ✅ safely handle possible null
 
   // Example static data
   const products = ["Apple", "Banana", "Carrot", "Dates", "Eggplant"];
