@@ -23,3 +23,12 @@ export interface WooProductAPI {
   };
   images?: { src: string }[];
 }
+
+export interface Product {
+  key: string;
+  id: number;
+  name: string;
+  price: string;
+  quantity: number;
+  total: string;
+}
