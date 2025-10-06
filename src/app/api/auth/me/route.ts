@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   // cookies() is synchronous, do NOT await
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
   const token = cookieStore.get("token")?.value; // ✅ now TS is happy
 
   if (!token) {
