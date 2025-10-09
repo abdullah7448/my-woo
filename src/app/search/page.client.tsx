@@ -1,4 +1,6 @@
 "use client";
+export const dynamic = "force-dynamic";
+export const revalidate = 0; // 👈 ensures it's never statically generated
 
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -7,10 +9,8 @@ export default function SearchResults() {
   const searchParams = useSearchParams();
   const [query, setQuery] = useState("");
 
-  // Wait until the client side renders
   useEffect(() => {
-    const q = searchParams?.get("query") || "";
-    setQuery(q);
+    setQuery(searchParams?.get("query") || "");
   }, [searchParams]);
 
   const products = ["Apple", "Banana", "Carrot", "Dates", "Eggplant"];

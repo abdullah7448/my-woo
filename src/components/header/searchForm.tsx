@@ -1,4 +1,3 @@
-// components/SearchForm.tsx
 "use client";
 
 import { useState } from "react";
@@ -7,10 +6,9 @@ export default function SearchForm() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<string[]>([]);
 
-  const handleSearch = async (e: React.FormEvent) => {
+  const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Example search logic: static array
     const products = ["Apple", "Banana", "Carrot", "Dates", "Eggplant"];
     const filtered = products.filter((p) =>
       p.toLowerCase().includes(query.toLowerCase())
