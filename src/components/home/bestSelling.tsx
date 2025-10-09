@@ -1,6 +1,9 @@
 // components/BestSellingSection.tsx
+//"use client"
+export const dynamic = "force-dynamic";
 import ProductCard from "../product-card/product-card";
 import { Product, WooProductAPI } from "@/types/type";
+
 
 export default async function BestSellingSection() {
   try {
@@ -12,9 +15,12 @@ export default async function BestSellingSection() {
     const url = `${API_BASE}/wc/v3/products?per_page=10&consumer_key=${CONSUMER_KEY}&consumer_secret=${CONSUMER_SECRET}`;
     const res = await fetch(url, { cache: "no-store" });
 
+    console.log(url)
+
     if (!res.ok) {
       console.error("Failed to fetch products", res.status, res.statusText);
       return <p>Failed to fetch products.</p>;
+      
     }
 
     const data: WooProductAPI[] = await res.json();
@@ -22,9 +28,12 @@ export default async function BestSellingSection() {
     // Map WooCommerce response to your Product type
     const products: Product[] = data.map((item, index) => ({
       id: item.id,
+      key: String(item.id),             // Convert ID to string to satisfy interface
       name: item.name,
-      price: item.prices?.price || "$0",
+      price: item.sale_price || item.regular_price || item.price || "$0",
       image: item.images?.[0]?.src,
+      quantity: 1,                      // default quantity
+      total: item.sale_price || item.regular_price || item.price || "$0", // default total
       bg: [
         "bg-gradient-to-r from-blue-400 to-indigo-500",
         "bg-gradient-to-r from-red-400 to-red-600",
@@ -33,9 +42,6 @@ export default async function BestSellingSection() {
         "bg-gradient-to-r from-green-400 to-emerald-600",
         "bg-gradient-to-r from-pink-400 to-fuchsia-600",
       ][index % 6],
-      key: String(item.id),       // satisfy Product type
-      quantity: 1,                // default quantity
-      total: item.prices?.price || "$0", // default total
     }));
 
     return (
