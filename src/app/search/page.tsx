@@ -1,13 +1,18 @@
-// app/search/page.tsx
 "use client";
 
 import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function SearchResults() {
   const searchParams = useSearchParams();
-  const query = searchParams?.get("query") || ""; // ✅ safely handle possible null
+  const [query, setQuery] = useState("");
 
-  // Example static data
+  // Wait until the client side renders
+  useEffect(() => {
+    const q = searchParams?.get("query") || "";
+    setQuery(q);
+  }, [searchParams]);
+
   const products = ["Apple", "Banana", "Carrot", "Dates", "Eggplant"];
   const results = products.filter((p) =>
     p.toLowerCase().includes(query.toLowerCase())
