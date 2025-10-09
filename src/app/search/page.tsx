@@ -1,6 +1,6 @@
 "use client";
-export const dynamic = "force-dynamic";
-export const revalidate = 0; // 👈 ensures it's never statically generated
+// export const dynamic = "force-dynamic";
+// export const revalidate = 0; // 👈 ensures it's never statically generated
 
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
